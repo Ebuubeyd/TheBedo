@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,6 +36,29 @@ class _FoodListPageState extends State<FoodListPage>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent, // Arka planı şeffaf yap
+        elevation: 0, // Gölgeyi kaldır
+        title: Text(
+          'The BEDO Yemek Menüsü',
+          style: TextStyle(color: Colors.grey[200]),
+        ),
+        flexibleSpace: FlexibleSpaceBar(
+          background: BackdropFilter(
+            filter: ImageFilter.blur(
+                sigmaX: 40, sigmaY: 40), // Hafif bulanıklık uygula
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.grey[200],
+          ),
+        ),
+      ),
       backgroundColor: Colors.grey[800],
       body: SafeArea(
         child: ListView.builder(

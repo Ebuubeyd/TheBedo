@@ -46,10 +46,7 @@ class DrinkListPageState extends State<DrinkListPage>
         flexibleSpace: FlexibleSpaceBar(
           background: BackdropFilter(
             filter: ImageFilter.blur(
-                sigmaX: 5, sigmaY: 5), // Hafif bulanıklık uygula
-            child: Container(
-              color: Colors.grey[600], // Arka plan rengini uygula
-            ),
+                sigmaX: 40, sigmaY: 40), // Hafif bulanıklık uygula
           ),
         ),
         leading: IconButton(
